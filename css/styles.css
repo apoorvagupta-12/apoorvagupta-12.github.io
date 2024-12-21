@@ -10992,3 +10992,36 @@ p.lead {
   }
 }
 
+.resume-section {
+  border-bottom: 1px solid #dee2e6;
+  padding: 3rem 2rem !important; /* Add horizontal padding for space */
+  margin: 0 !important; /* Reset margins */
+}
+
+/* Remove any bottom border from the last section */
+.resume-section:last-child {
+  border-bottom: none;
+}
+
+/* Make sure content is consistently spaced */
+.resume-section .resume-section-content {
+  width: 100%;
+  padding: 1rem 0;
+}
+
+/* Reset margins for headings inside sections */
+.resume-section h1,
+.resume-section h2,
+.resume-section h3,
+.resume-section h4,
+.resume-section h5,
+.resume-section h6 {
+  margin-bottom: 1rem;
+}
+
+/* Add consistent spacing between elements */
+.resume-section p,
+.resume-section ul,
+.resume-section .subheading {
+  margin-bottom: 1rem;
+}
