@@ -271,7 +271,7 @@
                 TransitHacks
               </h3>
               <p>
-                As part of the TransitHacks2025 hackathon—where teams tackled Chicago CTA–related challenges—CTA Red Line Ride‑Match was developed to connect University of Chicago commuters on the Red Line so they could travel together based on shared interests and minimize wait times. The system captures user profiles (email, origin, destination, interests) and trip windows, ingests live departure/arrival data from the CTA Train Tracker API, computes cosine similarity over declared interests for topic‑based matching, and employs a scheduling engine that optimizes “time together × lateness.” A Python‑based Streamlit frontend interacts with a MySQL (AWS RDS) backend to store profiles and trips, display routes and matches, and handle email‑based “magic link” verification. Core features—including email verification, live train tracking, interest matching, ride scheduling, profile/trip storage, and an interactive UI—demonstrate the feasibility of real‐time, interest‐driven ride matching; planned enhancements include CNET single‑sign‑on, photo verification, schedule change alerts, and expanded coverage beyond the Red Line.
+                As part of the TransitHacks2025 hackathon—where teams tackled Chicago CTA–related challenges—Maroon Line Ride‑Match was developed to connect University of Chicago commuters on the Red Line so they could travel together based on shared interests and minimize wait times. The system captures user profiles (email, origin, destination, interests) and trip windows, ingests live departure/arrival data from the CTA Train Tracker API, computes cosine similarity over declared interests for topic‑based matching, and employs a scheduling engine that optimizes “time together × lateness.” A Python‑based Streamlit frontend interacts with a MySQL (AWS RDS) backend to store profiles and trips, display routes and matches, and handle email‑based “magic link” verification. Core features—including email verification, live train tracking, interest matching, ride scheduling, profile/trip storage, and an interactive UI—demonstrate the feasibility of real‐time, interest‐driven ride matching; planned enhancements include CNET single‑sign‑on, photo verification, schedule change alerts, and expanded coverage beyond the Red Line.
               </p>
               <a class="text-primary" href="https://github.com/apoorvagupta-12/TransitHacks2025/tree/main">
                 Analysis &amp; Report
@@ -280,23 +280,36 @@
           </div>
         </div>
 
-        <!-- BMI Predictor (Card) -->
-        <div class="card snazzy-card mb-5 fade-in-section">
-          <div class="card-body d-flex flex-column flex-md-row justify-content-between">
-            <div class="flex-grow-1">
-              <h3 class="mb-0">
-                <img src="assets/img/github-icon.svg" alt="GitHub" style="width:24px; margin-right:0.5rem;" />
-                BMI Predictor
-              </h3>
-              <p>
-                Using a dataset of house sales in King’s County (2015–2016), identified key drivers of selling price and built a linear regression model (R² = 0.7787) to predict price based on those drivers.
-              </p>
-              <a class="text-primary" href="https://github.com/apoorvagupta-12/King-County-Housing-Analysis">
-                Analysis &amp; Report
-              </a>
-            </div>
-          </div>
-        </div>
+        <!-- Real-Time BMI Prediction (Card) -->
+<div class="card snazzy-card mb-5 fade-in-section">
+  <div class="card-body d-flex flex-column flex-md-row justify-content-between">
+    <div class="flex-grow-1">
+      <h3 class="mb-0">
+        <img src="assets/img/github-icon.svg" alt="GitHub" style="width:24px; margin-right:0.5rem;" />
+        Real‑Time BMI Prediction
+      </h3>
+      <p>
+        This project implements a real‑time Body Mass Index (BMI) predictor that leverages facial imagery as its sole input. By combining deep face embeddings for demographic cues with geometric landmark features for structural information, an XGBoost regressor estimates BMI from either a live webcam feed or static image uploads.
+      </p>
+      <p>
+        • <strong>Facial embeddings &amp; demographics:</strong> An InceptionResNetV1 (FaceNet) model extracts 512‑dimensional embeddings from each detected face. A FairFace ResNet34 head then predicts demographic attributes (age group, gender, race), supplying semantic context correlated with BMI.<br />
+        • <strong>Geometric landmark features:</strong> dlib’s 68‑point landmark predictor captures precise anchor points around the eyes, nose, mouth, and jawline. Normalized distances and angles (cheekbone width, jaw curve, eye‑to‑mouth ratios) encode craniofacial structure—features known to correlate with body composition.<br />
+        • <strong>Multimodal fusion via XGBoost:</strong> Demographic embeddings and geometric features are concatenated into a unified vector. An XGBoost regressor is trained on this representation to predict numerical BMI, updating every five seconds during live webcam streaming and overlaying bounding boxes with landmark points for feedback.
+      </p>
+      <p>
+        On held‑out test samples, the final model achieved a Pearson correlation coefficient of <strong>0.663</strong> between predicted and true BMI values. By integrating both FaceNet/FairFace embeddings and dlib landmarks, this approach matches or exceeds benchmarks from “Face‑Based BMI Estimation via Deep Convolutional Neural Networks” (arXiv:1703.03156), which relied solely on end‑to‑end CNN regression. The multimodal fusion enhances interpretability and robustness compared to single‑stream baselines.
+      </p>
+      <p>
+        All code and pretrained weights (FaceNet, FairFace, dlib landmarks, and the trained XGBoost model) are open‑sourced for reproducibility. This pipeline can serve as a foundation for health‑tech prototypes, wellness apps, or academic research aiming to push real‑time, face‑based BMI estimation beyond existing benchmarks.
+      </p>
+      <p>
+        <a class="text-primary" href="https://github.com/sondande/ML_II_Final_Project" target="_blank">View the GitHub repository</a><br />
+        <a class="text-primary" href="https://arxiv.org/abs/1703.03156" target="_blank">Read the benchmark paper (arXiv:1703.03156)</a>
+      </p>
+    </div>
+  </div>
+</div>
+
 
         <!-- King’s County House Sales Analysis (Card) -->
         <div class="card snazzy-card mb-5 fade-in-section">
