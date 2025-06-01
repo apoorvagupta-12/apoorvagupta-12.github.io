@@ -11025,3 +11025,148 @@ p.lead {
 .resume-section .subheading {
   margin-bottom: 1rem;
 }
+
+/*
+  —————————————————————————————
+  Custom Overrides (append this to the bottom of your existing styles.css)
+  —————————————————————————————
+*/
+
+/* 1. Color Palette Overrides */
+:root {
+  --bs-primary: #2c3e50;       /* Charcoal Navy */
+  --bs-primary-rgb: 44, 62, 80;
+  --bs-secondary: #ecf0f1;     /* Light Gray Accent */
+  --bs-secondary-rgb: 236, 240, 241;
+  --bs-link-color: #2c3e50;
+  --bs-link-hover-color: #6c757d;
+}
+
+/* 2. Typography Refinements */
+h1, h2, h3, h4, .subheading {
+  font-family: 'Saira Extra Condensed', sans-serif;
+  letter-spacing: 0.05em;
+}
+
+body, p, .lead {
+  font-family: 'Muli', sans-serif;
+  color: #2c3e50;
+  line-height: 1.6;
+}
+
+/* 3. Layout & Spacing */
+.resume-section {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.resume-section-content {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* 4. Profile Image Adjustments */
+#sideNav .img-profile {
+  width: 120px;
+  height: 120px;
+  border: 3px solid var(--bs-secondary);
+  object-fit: cover;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 5. “Card” Style Wrappers */
+.snazzy-card {
+  border: none;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  max-width: 700px;
+  margin: 0 auto 2rem;
+}
+
+.snazzy-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* 6. Badge‐Pill Dates */
+.badge-pill {
+  border-radius: 10rem;
+  padding: 0.4rem 0.9rem;
+}
+
+/* 7. Nav Link Hover Underline */
+#sideNav .nav-link {
+  position: relative;
+  transition: color 0.2s ease;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+#sideNav .nav-link:after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: var(--bs-secondary);
+  transition: width 0.3s ease;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+#sideNav .nav-link:hover,
+#sideNav .nav-link.active {
+  color: var(--bs-secondary);
+}
+
+#sideNav .nav-link:hover:after,
+#sideNav .nav-link.active:after {
+  width: 100%;
+}
+
+/* 8. Fade‐In Sections on Scroll */
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* 9. Link Hover Effects in Projects/Education/Research */
+.resume-section a.text-primary {
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.resume-section a.text-primary:hover {
+  color: var(--bs-secondary);
+  text-shadow: 0 0 5px rgba(44, 62, 80, 0.2);
+}
+
+/* 10. Skills Icons Background Colors */
+.dev-icons .fa-java {
+  background: #007396;
+  color: #fff;
+  padding: 0.5rem;
+  border-radius: 50%;
+}
+.dev-icons .fa-python {
+  background: #306998;
+  color: #fff;
+  padding: 0.5rem;
+  border-radius: 50%;
+}
+/* (Repeat as needed for other brand‐colored icons) */
+
+/* 11. Subtle Tweaks for Awards Section */
+#awards .fa-li i {
+  color: #f39c12; /* Warmer Gold */
+}
+
+#awards li {
+  font-style: italic;
+  margin-bottom: 0.75rem;
+}
