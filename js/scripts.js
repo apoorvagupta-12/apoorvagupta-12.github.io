@@ -32,3 +32,20 @@ window.addEventListener('DOMContentLoaded', event => {
     });
 
 });
+
+// Fade‑in sections on scroll
+function handleScroll() {
+  $('.fade-in-section').each(function () {
+    var bottom_of_element = $(this).offset().top + $(this).outerHeight() / 5;
+    var bottom_of_window = $(window).scrollTop() + $(window).height();
+
+    if (bottom_of_window > bottom_of_element) {
+      $(this).addClass('is-visible');
+    }
+  });
+}
+
+$(window).on('scroll', handleScroll);
+$(document).ready(function () {
+  handleScroll(); // so that any sections already visible on load become visible immediately
+});

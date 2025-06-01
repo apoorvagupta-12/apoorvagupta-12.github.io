@@ -11028,13 +11028,19 @@ p.lead {
 
 /*
   —————————————————————————————
-  Custom Overrides (append this to the bottom of your existing styles.css)
+  Custom Overrides (bottom of styles.css)
   —————————————————————————————
 */
 
+/* 0. Make sure no invisible text: force dark text inside fade‑in sections */
+.fade-in-section,
+.fade-in-section * {
+  color: #2c3e50 !important;
+}
+
 /* 1. Color Palette Overrides */
 :root {
-  --bs-primary: #2c3e50;       /* Charcoal Navy */
+  --bs-primary: #2c3e50;       /* Charcoal/Navy */
   --bs-primary-rgb: 44, 62, 80;
   --bs-secondary: #ecf0f1;     /* Light Gray Accent */
   --bs-secondary-rgb: 236, 240, 241;
@@ -11066,11 +11072,13 @@ body, p, .lead {
 }
 
 /* 4. Profile Image Adjustments */
+/*   - object-position: top center → show the top of the headshot */
 #sideNav .img-profile {
   width: 120px;
   height: 120px;
   border: 3px solid var(--bs-secondary);
   object-fit: cover;
+  object-position: top center;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -11082,6 +11090,7 @@ body, p, .lead {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   max-width: 700px;
   margin: 0 auto 2rem;
+  background-color: #fff;
 }
 
 .snazzy-card:hover {
@@ -11089,7 +11098,7 @@ body, p, .lead {
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
 }
 
-/* 6. Badge‐Pill Dates */
+/* 6. Badge‑Pill Dates */
 .badge-pill {
   border-radius: 10rem;
   padding: 0.4rem 0.9rem;
@@ -11124,7 +11133,7 @@ body, p, .lead {
   width: 100%;
 }
 
-/* 8. Fade‐In Sections on Scroll */
+/* 8. Fade‑In Sections on Scroll */
 .fade-in-section {
   opacity: 0;
   transform: translateY(20px);
@@ -11159,7 +11168,7 @@ body, p, .lead {
   padding: 0.5rem;
   border-radius: 50%;
 }
-/* (Repeat as needed for other brand‐colored icons) */
+/* (Repeat for other brand icons if desired) */
 
 /* 11. Subtle Tweaks for Awards Section */
 #awards .fa-li i {
